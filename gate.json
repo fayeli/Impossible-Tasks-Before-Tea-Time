@@ -2,97 +2,76 @@
     "Entities": [
         {
             "clientOnly": 0,
-            "created": "2016-12-04T02:33:39Z",
+            "created": "2016-12-04T10:32:03Z",
             "dimensions": {
-                "x": 0.79070460796356201,
-                "y": 2.0291550159454346,
+                "x": 0.79070472717285156,
+                "y": 2.0291547775268555,
                 "z": 0.091692209243774414
             },
-            "id": "{5b6467f2-13d6-4b4f-9317-1b9c3bbba68e}",
-            "lastEditedBy": "{758e8781-334a-4ba1-a66e-eaa2846d4c4f}",
-            "modelURL": "https://s3-us-west-1.amazonaws.com/hifi-content/jazmin/dev/hackathon/ITBTT/gate_door_L.fbx",
-            "name": "Gate_doorframe",
+            "id": "{4de9525d-a8c0-4a5a-8a82-d389b4ebcf22}",
+            "lastEditedBy": "{28ac1523-dc53-4585-9be7-34563878c149}",
+            "modelURL": "https://s3-us-west-1.amazonaws.com/hifi-content/jazmin/production/Hackathon/1216/models/gate_door.fbx",
+            "name": "Gate_door_R",
             "owningAvatarID": "{00000000-0000-0000-0000-000000000000}",
             "position": {
                 "x": 0,
-                "y": 0.0004425048828125,
-                "z": 0
+                "y": 0,
+                "z": 0.021699905395507812
             },
             "queryAACube": {
                 "scale": 2.5742440223693848,
                 "x": -1.2871220111846924,
-                "y": -1.2866795063018799,
-                "z": -1.2871220111846924
+                "y": -1.2871220111846924,
+                "z": -1.2654221057891846
             },
             "registrationPoint": {
                 "x": 0,
                 "y": 0.5,
                 "z": 0.5
             },
-            "shapeType": "box",
+            "rotation": {
+                "w": 0,
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "shapeType": "simple-hull",
             "type": "Model"
         },
         {
             "clientOnly": 0,
-            "created": "2016-12-04T02:33:39Z",
+            "created": "2016-12-04T10:29:52Z",
             "dimensions": {
-                "x": 0.79070466756820679,
+                "x": 0.79070472717285156,
                 "y": 2.0291547775268555,
                 "z": 0.091692209243774414
             },
-            "id": "{a0f2088e-e9b6-4999-9035-259b1da8115c}",
-            "lastEditedBy": "{758e8781-334a-4ba1-a66e-eaa2846d4c4f}",
-            "modelURL": "https://s3-us-west-1.amazonaws.com/hifi-content/jazmin/dev/hackathon/ITBTT/gate_doorR.fbx",
-            "name": "Gate_door_R",
+            "id": "{11c58ef9-21c1-45f8-a532-bc2ec96c68a0}",
+            "lastEditedBy": "{28ac1523-dc53-4585-9be7-34563878c149}",
+            "modelURL": "https://s3-us-west-1.amazonaws.com/hifi-content/jazmin/production/Hackathon/1216/models/gate_door.fbx",
+            "name": "Gate_door_L",
             "owningAvatarID": "{00000000-0000-0000-0000-000000000000}",
             "position": {
-                "x": 1.6358799934387207,
+                "x": 1.6273441314697266,
                 "y": 0,
-                "z": 1.9073486328125e-06
+                "z": 0
             },
             "queryAACube": {
                 "scale": 2.5742440223693848,
-                "x": 0.34875798225402832,
+                "x": 0.34022212028503418,
                 "y": -1.2871220111846924,
-                "z": -1.2871201038360596
+                "z": -1.2871220111846924
             },
             "registrationPoint": {
                 "x": 1,
                 "y": 0.5,
                 "z": 0.5
             },
-            "shapeType": "box",
-            "type": "Model"
-        },
-        {
-            "clientOnly": 0,
-            "created": "2016-12-04T02:22:43Z",
-            "dimensions": {
-                "x": 2.2932939529418945,
-                "y": 2.4276025295257568,
-                "z": 0.1011279821395874
-            },
-            "id": "{59756888-c5a7-496c-92ad-e80be1631a7e}",
-            "lastEditedBy": "{758e8781-334a-4ba1-a66e-eaa2846d4c4f}",
-            "modelURL": "https://s3-us-west-1.amazonaws.com/hifi-content/jazmin/dev/hackathon/ITBTT/gate_doorframe.fbx",
-            "name": "Gate_door_L",
-            "owningAvatarID": "{00000000-0000-0000-0000-000000000000}",
-            "position": {
-                "x": 0.81347179412841797,
-                "y": 0.0598297119140625,
-                "z": 0.032444000244140625
-            },
-            "queryAACube": {
-                "scale": 3.3410594463348389,
-                "x": -0.85705792903900146,
-                "y": -1.6107000112533569,
-                "z": -1.6380857229232788
-            },
             "rotation": {
-                "w": 1,
-                "x": -1.52587890625e-05,
-                "y": -1.52587890625e-05,
-                "z": -1.52587890625e-05
+                "w": 0,
+                "x": 0,
+                "y": 0,
+                "z": 0
             },
             "shapeType": "simple-hull",
             "type": "Model"
