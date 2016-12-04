@@ -5,10 +5,14 @@
 //
 
 (function() {
+    var utilitiesScript = Script.resolvePath('http://hifi-content.s3.amazonaws.com/james/tracklight/utils.js');
+    Script.include(utilitiesScript);
+
     var LEVER_ANIMATION_URL = "https://s3-us-west-1.amazonaws.com/hifi-content/jazmin/dev/hackathon/ITBTT/lever_with_keys.fbx";
     var TOGGLE_SOUND_URL = "http://hifi-content.s3.amazonaws.com/james/tracklight/lamp_switch_2.wav";
-    var leverToMainChannel = "Lever-to-Main-Channel";
-    var mainToLeverChannel = "Main-to-Lever-Channel";
+
+    var leverToMainChannel = "Lever-To-Main-Channel";
+    var mainToLeverChannel = "Main-To-Lever-Channel";
     var SEARCH_RADIUS = 100;
 
     var _this;
@@ -19,6 +23,7 @@
 
     Lever.prototype = {
         preload: function(entityID) {
+            print("lever preload");
             this.entityID = entityID;
             this.props = Entities.getEntityProperties(this.entityID);
             this.position = this.props.position;
@@ -28,16 +33,16 @@
                 wantsTrigger: true
             });
             Messages.subscribe(mainToLeverChannel);
-            Messages.messageReceived.connect(this.handleMessages);
+            Messages.messageReceived.connect(_this.handleMessages);
         },
 
         handleMessages: function(channel, message, sender) {
-            // only handle messages from me (who is running the main program)
-            if (channel === mainToLeverChannel && sender === MyAvatar.sessionUUID) {
+            // only run this once on my copy (person running the main program)
+            if (channel === mainToLeverChannel && sender == MyAvatar.sessionUUID) {
                 print("lever recieved message from main: " + message);
                 var currentState = getEntityCustomData('leverState', _this.entityID);
                 if (message === "toggle lever up" && currentState === "down") {
-                    this.toggle();
+                    _this.toggle();
                 }
             }
         },
@@ -91,9 +96,9 @@
             this.toggle();
         },
         unload: function() {
-            print("lever entity unload");
+            print("lever unload");
             Messages.unsubscribe(mainToLeverChannel);
-            Messages.messageReceived.disconnect(this.handleMessages);
+            Messages.messageReceived.disconnect(_this.handleMessages);
         }
     };
 
