@@ -5,7 +5,6 @@
 //
 
 (function() {
-	var potionToMainChannel = "Potion-To-Main-Channel";
 	function showDrinkingFx () {
 		print("show drinking fx");
 		//TODO: Particle fx
@@ -15,8 +14,12 @@
 
 	function enableGestureRecognizer () {
 		print("enable Gesture Recognizer");
-		Messages.sendMessage(potionToMainChannel, MyAvatar.sessionUUID);
+		Settings.setValue("hackathon-spell-enabled", true);
 	}
+
+	this.preload = function(entityID) {
+		Settings.setValue("hackathon-spell-enabled", false);
+	};
 
 	this.startNearGrab = function(entityId) {
 		showDrinkingFx();

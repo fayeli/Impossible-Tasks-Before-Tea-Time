@@ -8,7 +8,6 @@
     var GATE_OPEN_SOUND_URL = "https://s3-us-west-1.amazonaws.com/hifi-content/jazmin/production/Hackathon/1216/audio/gate_opening.wav";
     var gateOpenSound;
     var gateLockToMainChannel = "Gate-Lock-To-Main-Channel";
-    var potionToMainChannel = "Potion-To-Main-Channel";
 	var leverToMainChannel = "Lever-To-Main-Channel";
     var mainToLeverChannel = "Main-To-Lever-Channel";
     var leverAreaToMainChannel = "Lever-Area-To-Main-Channel";
@@ -24,7 +23,6 @@
         print("running esacape the elevator main");
         gateOpenSound = SoundCache.getSound(GATE_OPEN_SOUND_URL);
         Messages.subscribe(gateLockToMainChannel);
-        Messages.subscribe(potionToMainChannel);
         Messages.subscribe(leverToMainChannel);
         Messages.subscribe(leverAreaToMainChannel);
         Messages.messageReceived.connect(handleMessages);
@@ -43,10 +41,6 @@
             }
         });
         print("gateLeftID: " + gateLeftID + ", gateRightID: " + gateRightID);
-    }
-
-    function givePlayerMagic(playerUUID) {
-        print("give player magic, playerUUID = " + playerUUID);
     }
 
     function openGate() {
@@ -102,10 +96,6 @@
             print("main recieved message from lever area: " + message);
             Messages.sendMessage(mainToLeverChannel, "toggle lever up");
         }
-        if (channel === potionToMainChannel) {
-            print("main recieved message from lever area: " + message);
-            givePlayerMagic(sender);
-        }
         if (channel === gateLockToMainChannel) {
             print("main recieved message from gate lock: " + message);
             openGate();
@@ -119,7 +109,6 @@
             Entities.deleteEntity(gateLockID);
         }
         Messages.unsubscribe(gateLockToMainChannel);
-        Messages.unsubscribe(potionToMainChannel);
         Messages.unsubscribe(leverToMainChannel);
         Messages.unsubscribe(leverAreaToMainChannel);
         Messages.messageReceived.disconnect(handleMessages);
