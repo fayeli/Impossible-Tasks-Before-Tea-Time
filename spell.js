@@ -3,7 +3,7 @@
 	var spellToMagicBoxChannel = "Spell-To-Magic-Box-Channel";
 	var MAGICBOX_SCRIPT_URL = "https://hifi-content.s3.amazonaws.com/faye/vrhackathonsf/magicBoxEntityScript.js";
 	var magicBoxID;
-	enabled = Settings.getValue("hackathon-spell-enabled", false);
+	enabled = Settings.getValue("hackathon-spell-enabled");
 	if (enabled) {
 		print("creating magic box");
 		var pos = Vec3.sum(MyAvatar.position, Vec3.multiply(3, Quat.getFront(Camera.getOrientation())))

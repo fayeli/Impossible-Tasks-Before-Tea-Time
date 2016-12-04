@@ -32,5 +32,9 @@
         }
         showDrinkingFx();
         enableGestureRecognizer();
-    }
+    };
+
+    this.unload = function(entityID) {
+    	Settings.setValue("hackathon-spell-enabled", false);
+    };
 });
