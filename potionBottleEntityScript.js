@@ -5,6 +5,7 @@
 //
 
 (function() {
+	var potionToMainChannel = "Potion-To-Main-Channel";
 	function showDrinkingFx () {
 		print("show drinking fx");
 		//TODO: Particle fx
@@ -12,11 +13,21 @@
 		//TODO: Audio fx
 	}
 
-	function enableGestureRecogniser () {
-		print("enable Gesture Recogniser");
+	function enableGestureRecognizer () {
+		print("enable Gesture Recognizer");
+		Messages.sendMessage(potionToMainChannel, MyAvatar.sessionUUID);
 	}
 
 	this.startNearGrab = function(entityId) {
+		showDrinkingFx();
+        enableGestureRecogniser();
+	};
 
-	}
+	this.clickReleaseOnEntity = function(entityID, mouseEvent) {
+        if (!mouseEvent.isLeftButton) {
+            return;
+        }
+        showDrinkingFx();
+        enableGestureRecognizer();
+    }
 });
